@@ -14,7 +14,6 @@
     <router-view/>
   </div>
 </div>
-
 </template>
 
 <style>
@@ -29,6 +28,7 @@
     background: #040918;
     color: #fff;
     transition: all 0.3s;
+    text-align: center;
 }
 #content {
     margin-left:15%

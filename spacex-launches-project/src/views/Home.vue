@@ -1,5 +1,5 @@
 <template>
-  <div class="home container">
+  <div class="home container" style="text-align:center">
     <h3>SPACEX LAUNCHES</h3>
     <Cards />
   </div>

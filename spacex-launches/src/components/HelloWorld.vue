@@ -1,51 +1,28 @@
 <template>
 <div class="flex row">
-  <div class="card">
-    <img class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+  <div v-for="ship in ships" :key="ship.name">
+      {{ ship.name }}
   </div>
-    <div class="card">
-    <img class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-    <div class="card">
-    <img class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-    <div class="card">
-    <img class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-    <div class="card">
-    <img class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  </div>
+</div>
 </template>
 
 <script>
+import gql from 'graphql-tag';
 export default {
-  name: 'HelloWorld'
+  name: 'HelloWorld',
+  apollo:{
+    ships: gql`
+      query {
+      ships {
+        name
+        homeport
+        image
+        }
+      }`
+  },
+  props: {
+    msg: String
+  }
 }
 </script>
 
