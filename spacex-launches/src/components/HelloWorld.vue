@@ -1,7 +1,7 @@
 <template>
 <div class="flex row">
-    <div v-for="launch in launchesPast" :key="launch.mission_name" class="card">
-    <img class="card-img-top" src= {{ launch.links.flickr_image }}>
+    <div v-for="launch in launchesPast" :key="launch.mission_name" class="card mb-4">
+    <img class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">{{ launch.mission_name }}</h5>
       <p class="card-text">

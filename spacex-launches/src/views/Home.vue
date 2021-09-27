@@ -1,6 +1,6 @@
 <template>
-  <div class="home container" style="text-align:center">
-    <h3>SPACEX LAUNCHES</h3>
+  <div class="home container">
+    <h1>SPACEX LAUNCHES</h1>
     <Cards />
   </div>
 </template>

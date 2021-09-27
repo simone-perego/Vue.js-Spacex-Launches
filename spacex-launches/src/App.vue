@@ -18,7 +18,7 @@
 
 <style>
 #sidebar {
-    width: 15%;
+    width: 10%;
     font-size:30px;
     position: fixed;
     top: 0;
@@ -31,7 +31,7 @@
     text-align: center;
 }
 #content {
-    margin-left:15%
+    margin-left:10%
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -52,5 +52,9 @@
 
 #nav a.router-link-exact-active {
   color: #4244b9;
+}
+
+.container{
+  text-align:center
 }
 </style>
