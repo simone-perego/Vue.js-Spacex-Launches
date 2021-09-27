@@ -1,4 +1,4 @@
-import './plugins/bootstrap-vue'
+import Vue from "vue"
 import '@babel/polyfill'
 import 'mutationobserver-shim'
 import './plugins/bootstrap-vue'
