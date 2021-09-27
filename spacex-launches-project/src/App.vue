@@ -2,12 +2,12 @@
 <div>
   <nav id="sidebar">
     <div id="nav">
-      <li>
+      <ol style="padding-left:0px">
         <router-link to="/">Home</router-link>
-      </li>
-      <li>
+      </ol>
+      <ol style="padding-left:0px">
         <router-link to="/about">About</router-link>
-      </li>
+      </ol>
     </div>
   </nav>
   <div id="content">
@@ -18,22 +18,20 @@
 </template>
 
 <style>
-.wrapper {
-    display: flex;
-    width: 100%;
-}
-
 #sidebar {
-    width: 250px;
+    width: 15%;
     font-size:30px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #04081b;
+    background: #040918;
     color: #fff;
     transition: all 0.3s;
+}
+#content {
+    margin-left:15%
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -44,7 +42,7 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: 10px;
 }
 
 #nav a {
@@ -53,6 +51,6 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #4244b9;
 }
 </style>

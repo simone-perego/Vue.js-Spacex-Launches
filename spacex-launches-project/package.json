@@ -15,7 +15,9 @@
     "core-js": "^3.6.5",
     "graphql": "^15.6.0",
     "jquery": "^3.6.0",
+    "node-sass": "^6.0.1",
     "popper.js": "^1.16.1",
+    "sass-loader": "^12.1.0",
     "vue": "^3.0.0",
     "vue-apollo": "^3.0.8",
     "vue-router": "^4.0.0-0"
