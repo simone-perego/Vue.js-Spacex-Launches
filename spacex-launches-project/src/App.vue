@@ -1,13 +1,17 @@
 <template>
 <div class="wrapper">
   <nav id="sidebar">
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <div id="nav">
+      <li>
+        <router-link to="/">Home</router-link>
+      </li>
+      <li>
+        <router-link to="/about">About</router-link>
+      </li>
+    </div>
   </nav>
 </div>
+<router-view/>
 </template>
 
 <style>
@@ -18,12 +22,13 @@
 
 #sidebar {
     width: 250px;
+    font-size:30px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #7386D5;
+    background: #04081b;
     color: #fff;
     transition: all 0.3s;
 }
