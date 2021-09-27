@@ -7,7 +7,8 @@ import 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
 
-
-    
+new Vue({
+    render: h => h(App),
+}).$mount('#app');
 
 createApp(App).use(router).mount('#app')
