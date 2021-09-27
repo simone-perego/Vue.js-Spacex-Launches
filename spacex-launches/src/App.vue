@@ -1,14 +1,38 @@
 <template>
-  <div id="app">
+<div>
+  <nav id="sidebar">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <ol style="padding-left:0px">
+        <router-link to="/">Home</router-link>
+      </ol>
+      <ol style="padding-left:0px">
+        <router-link to="/about">About</router-link>
+      </ol>
     </div>
+  </nav>
+  <div id="content">
     <router-view/>
   </div>
+</div>
+
 </template>
 
 <style>
+#sidebar {
+    width: 15%;
+    font-size:30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #040918;
+    color: #fff;
+    transition: all 0.3s;
+}
+#content {
+    margin-left:15%
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,7 +42,7 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: 10px;
 }
 
 #nav a {
@@ -27,6 +51,6 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #4244b9;
 }
 </style>
