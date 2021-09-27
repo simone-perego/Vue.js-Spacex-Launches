@@ -1,5 +1,5 @@
 <template>
-<div class="wrapper">
+<div>
   <nav id="sidebar">
     <div id="nav">
       <li>
@@ -10,8 +10,11 @@
       </li>
     </div>
   </nav>
+  <div id="content">
+    <router-view/>
+  </div>
 </div>
-<router-view/>
+
 </template>
 
 <style>
