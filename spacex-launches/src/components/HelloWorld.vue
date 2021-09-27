@@ -1,24 +1,42 @@
 <template>
 <div class="flex row">
-  <div v-for="ship in ships" :key="ship.name">
-      {{ ship.name }}
+    <div v-for="launch in launchesPast" :key="launch.mission_name" class="card">
+    <img class="card-img-top" src= {{ launch.links.flickr_image }}>
+    <div class="card-body">
+      <h5 class="card-title">{{ launch.mission_name }}</h5>
+      <p class="card-text">
+        la missione {{ launch.mission_name }}
+        è iniziata {{ launch.launch_success }}
+        alle {{ launch.launch_date_local }}
+        dalla base di lancio {{ launch.launch_site.site_name_long }}
+      </p>
+      <a href="#" class="btn btn-primary">DETTAGLI</a>
+    </div>
   </div>
 </div>
 </template>
 
 <script>
 import gql from 'graphql-tag';
+
 export default {
   name: 'HelloWorld',
   apollo:{
-    ships: gql`
-      query {
-      ships {
-        name
-        homeport
-        image
-        }
-      }`
+    launchesPast: gql`query{    
+  launchesPast(limit: 10){
+  mission_name
+  launch_success
+  launch_date_local
+    launch_site {
+      site_name_long
+    }
+            links {
+      article_link
+      video_link
+      flickr_images
+    }
+  }
+  }`
   },
   props: {
     msg: String
@@ -43,6 +61,6 @@ a {
   color: #42b983;
 }
 .card{
-  width: calc(100% / 5)
+  width: calc(100% / 4)
 }
 </style>
