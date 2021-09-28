@@ -1,6 +1,7 @@
 <template>
-<div class="flex row">
-    <div v-for="launch in launchesPast" :key="launch.mission_name" class="card mb-4">
+<div class="row">
+  <div v-for="launch in launchesPast" :key="launch.mission_name" class="col-sm-6 col-md-3">
+    <div class="card">
     <img class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">{{ launch.mission_name }}</h5>
@@ -10,7 +11,14 @@
         alle {{ launch.launch_date_local }}
         dalla base di lancio {{ launch.launch_site.site_name_long }}
       </p>
-      <a href="#" class="btn btn-primary">DETTAGLI</a>
+      
+      <button @click="showModal = true">Show Modal</button>
+        <Modal
+      v-show="isModalVisible"
+      @close="closeModal">
+        </Modal>
+      
+    </div>
     </div>
   </div>
 </div>
@@ -19,8 +27,13 @@
 <script>
 import gql from 'graphql-tag';
 
+import Modal from './components/LaunchDetail.vue';
+
 export default {
   name: 'HelloWorld',
+  components: {
+      Modal,
+  },
   apollo:{
     launchesPast: gql`query{    
   launchesPast(limit: 10){
@@ -40,7 +53,20 @@ export default {
   },
   props: {
     msg: String
-  }
+  },
+  data() {
+      return {
+        isModalVisible: false,
+      };
+    },
+    methods: {
+      showModal() {
+        this.isModalVisible = true;
+      },
+      closeModal() {
+        this.isModalVisible = false;
+      }
+    }
 }
 </script>
 
@@ -60,7 +86,7 @@ li {
 a {
   color: #42b983;
 }
-.card{
-  width: calc(100% / 4)
+.card {
+  margin-bottom:30px
 }
 </style>

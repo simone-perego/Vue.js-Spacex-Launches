@@ -1,6 +1,8 @@
 <template>
   <div class="home container">
-    <h1>SPACEX LAUNCHES</h1>
+    <div class="title">
+      <h1>SPACEX LAUNCHES</h1>
+    </div>
     <Cards />
   </div>
 </template>
@@ -16,3 +18,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .title{
+    margin: 20px
+  }
+</style>
