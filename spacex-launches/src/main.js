@@ -7,9 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
-import { CardPlugin } from 'bootstrap-vue'
-Vue.use(CardPlugin)
-
 Vue.config.productionTip = false
 
 new Vue({

@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title"><slot name="modal-header"></slot></h4>
+                <h4 class="modal-title">{{ mission_name }}</h4>
                 <button type="button" class="close" @click="$emit('close')" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" >×</span>
                 </button>
@@ -24,7 +24,7 @@
 import gql from 'graphql-tag';
 
 export default {
-  name: 'launchDetail',
+  name: 'LaunchDetail',
   apollo:{
     launchesPast: gql`query{    
   launchesPast(limit: 10){

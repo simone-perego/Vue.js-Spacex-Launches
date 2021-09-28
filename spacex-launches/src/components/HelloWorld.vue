@@ -1,6 +1,5 @@
 <template>
 <div class="row">
-  <div v-for="launch in launchesPast" :key="launch.mission_name" class="col-sm-6 col-md-3">
     <div class="card">
     <img class="card-img-top">
     <div class="card-body">
@@ -11,28 +10,21 @@
         alle {{ launch.launch_date_local }}
         dalla base di lancio {{ launch.launch_site.site_name_long }}
       </p>
-      
-      <button @click="showModal = true">Show Modal</button>
-        <Modal
-      v-show="isModalVisible"
-      @close="closeModal">
-        </Modal>
-      
-    </div>
+      <button type="button" class="btn" @click="showModal">DETTAGLI</button>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
 import gql from 'graphql-tag';
 
-import Modal from './components/LaunchDetail.vue';
+import LaunchDetail from './LaunchDetail.vue';
 
 export default {
   name: 'HelloWorld',
   components: {
-      Modal,
+      LaunchDetail,
   },
   apollo:{
     launchesPast: gql`query{    
