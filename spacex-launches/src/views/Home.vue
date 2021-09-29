@@ -11,11 +11,15 @@
       <h5 class="card-title">{{ launch.mission_name }}</h5>
       <p class="card-text">
         la missione {{ launch.mission_name }}
-        è iniziata {{ launch.launch_success }}
+        è iniziata 
+        <a v-if= launch.launch_success >CON SUCCESSO</a>
+        <a v-else>SENZA SUCCESSO</a>
+        <p>
         alle {{ launch.launch_date_local }}
+        <p>
         dalla base di lancio {{ launch.launch_site.site_name_long }}
       </p>
-      <button type="button" class="btn"><router-link to="/launch">DETTAGLI</router-link></button>
+      <button type="button" class="btn"><router-link :to="{name:'Launch', params: { id: launch.id }}">DETTAGLI</router-link></button>
       </div>
     </div>
   </div>
@@ -33,10 +37,10 @@ export default {
   components: {
   },
   apollo:{
-    launchesPast: gql`query{    
-  launchesPast(limit: 10){
-  mission_name
+    launchesPast: gql`
+  query{ launchesPast(limit: 10){
   id
+  mission_name
   launch_success
   launch_date_local
     launch_site {
@@ -46,9 +50,9 @@ export default {
       article_link
       video_link
       flickr_images
+      }
     }
-  }
-  }`
+  }`,
   }
 }
 </script>
@@ -59,5 +63,8 @@ export default {
   }
   .card {
     margin-bottom:30px
+  }
+  .btn {
+    background-color: blue !important;
   }
 </style>

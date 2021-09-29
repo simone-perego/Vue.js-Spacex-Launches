@@ -16,9 +16,19 @@
 </div>
 </template>
 
+
+	<script>
+		export default {
+			name: 'app',
+		}
+	</script>
+
+
+
 <style>
+@media (min-width: 768px){
 #sidebar {
-    width: 10%;
+    width: 150px;
     font-size:30px;
     position: fixed;
     top: 0;
@@ -29,9 +39,17 @@
     color: #fff;
     transition: all 0.3s;
     text-align: center;
+  }
 }
+@media (max-width: 768px){
+  #nav{
+    display: none;
+  }
+}
+@media (min-width: 768px){
 #content {
-    margin-left:10%
+    margin-left:calc(100% - (100% - 150px))
+}
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -57,4 +75,6 @@
 .container{
   text-align:center
 }
+
 </style>
+

@@ -5,7 +5,7 @@
     </div>
     <div class="container">
       <div class="embed">
-        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" width="1000" height="500" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" width="1000" height="600" allowfullscreen></iframe>
       </div>
 </div>
   </div>
