@@ -6,12 +6,14 @@
       <p>id: {{ launch_year }} </p>
       <div v-for="launch in launch" :key="launch.id">
         <p>mission: {{ launch.id }}</p>
+        <p>mission: {{ launch.id }}</p>
+        <p>mission: {{ launch.id }}</p>
       </div>
     </div>
     <table class="table">
   <tbody>
   </tbody>
-</table>
+  </table>
   </div>
 </template>
 
