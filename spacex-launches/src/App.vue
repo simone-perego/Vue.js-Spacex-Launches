@@ -17,11 +17,11 @@
 </template>
 
 
-	<script>
-		export default {
-			name: 'app',
-		}
-	</script>
+<script>
+	export default {
+		name: 'app',
+	}
+</script>
 
 
 
