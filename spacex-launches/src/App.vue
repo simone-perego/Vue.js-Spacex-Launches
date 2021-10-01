@@ -17,11 +17,11 @@
 </template>
 
 
-	<script>
-		export default {
-			name: 'app',
-		}
-	</script>
+<script>
+	export default {
+		name: 'app',
+	}
+</script>
 
 
 
@@ -74,6 +74,14 @@
 
 .container{
   text-align:center
+}
+
+.title{
+  text-align:center
+}
+
+.detail{
+  text-align:left
 }
 
 </style>
