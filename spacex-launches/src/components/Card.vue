@@ -1,6 +1,6 @@
 <template>
- <div class="col-sm-6 col-md-3">
-  <div class="card">
+ <b-col>
+  <b-card>
     <img class="card-img-top" v-bind:src="launch.links.flickr_images" height="300">
     <div class="card-body">
       <h5 class="card-title">{{ launch.mission_name }}</h5>
@@ -16,8 +16,8 @@
         </p>
       <button type="button" class="btn"><router-link :to="{name:'Launch', params: { id: launch.id }}">DETTAGLI</router-link></button>
     </div>
-  </div>
- </div>
+  </b-card>
+ </b-col>
 </template>
 
 <script>
@@ -49,5 +49,6 @@ a {
 }
 .card {
   margin-bottom: 30px;
+  width: 18rem;
 }
 </style>
