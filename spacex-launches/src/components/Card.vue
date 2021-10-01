@@ -1,34 +1,35 @@
 <template>
- <b-col>
-  <b-card>
-    <img class="card-img-top" v-bind:src="launch.links.flickr_images" height="300">
-    <div class="card-body">
-      <h5 class="card-title">{{ launch.mission_name }}</h5>
-        <p class="card-text">
+  <b-col>
+    <b-card
+      v-bind:title="launch.mission_name"
+      v-bind:img-src="launch.links.flickr_images"
+      img-height="300px"
+    >
+      <b-card-text>
         la missione {{ launch.mission_name }}
-        è iniziata 
-        <a v-if= launch.launch_success >CON SUCCESSO</a>
-        <a v-else>SENZA SUCCESSO</a>
-        <p>
-        alle {{ launch.launch_date_local }}
-        <p>
-        dalla base di lancio {{ launch.launch_site.site_name_long }}
-        </p>
-      <button type="button" class="btn"><router-link :to="{name:'Launch', params: { id: launch.id }}">DETTAGLI</router-link></button>
-    </div>
-  </b-card>
- </b-col>
+        è iniziata
+        <span v-if="launch.launch_success">CON SUCCESSO</span>
+        <span v-else>SENZA SUCCESSO</span>
+        alle {{ launch.launch_date_local }} dalla base di lancio
+        {{ launch.launch_site.site_name_long }}
+      </b-card-text>
+
+      <b-button type="button" class="btn">
+        <router-link :to="{ name: 'Launch', params: { id: launch.id } }"
+          >DETTAGLI</router-link
+        >
+      </b-button>
+    </b-card>
+  </b-col>
 </template>
 
 <script>
-
 export default {
   name: "Card",
   props: {
-    launch: {}
-  } 
-}
-
+    launch: {},
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -52,3 +53,4 @@ a {
   width: 18rem;
 }
 </style>
+
