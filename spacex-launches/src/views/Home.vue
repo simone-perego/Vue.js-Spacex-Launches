@@ -3,9 +3,9 @@
     <div class="title">
       <h1>SPACEX LAUNCHES</h1>
     </div>
-    <div class="row">
+    <b-card-group>
       <Card v-for="launch in launchesPast" :key="launch.id" :launch="launch"/>
-    </div>
+    </b-card-group>
   </div>
 </template>
 
