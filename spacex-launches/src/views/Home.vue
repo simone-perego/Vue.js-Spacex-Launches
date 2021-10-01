@@ -19,7 +19,7 @@
         <p>
         dalla base di lancio {{ launch.launch_site.site_name_long }}
       </p>
-      <button type="button" class="btn"><router-link :to="{name:'Launch', params: { id: launch.id }}">DETTAGLI</router-link></button>
+      <router-link class="btn btn-primary" :to="{name:'Launch', params: { id: launch.id }}">DETTAGLI</router-link>
       </div>
     </div>
   </div>
